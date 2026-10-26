@@ -1,0 +1,38 @@
+npm notice run sims-pwa@1.0.0 dev
+npm notice run vite
+[33mThe CJS build of Vite's Node API is deprecated. See https://vite.dev/guide/troubleshooting.html#vite-cjs-node-api-deprecated for more details.[39m
+
+  [32m[1mVITE[22m v5.4.21[39m  [2mready in [0m[1m803[22m[2m[0m ms[22m
+
+  [32m➜[39m  [1mLocal[22m:   [36mhttp://localhost:[1m3000[22m/[39m
+[2m  [32m➜[39m  [1mNetwork[22m[2m: use [22m[1m--host[22m[2m to expose[22m
+[2m[32m  ➜[39m[22m[2m  press [22m[1mh + enter[22m[2m to show help[22m
+[2m12:28:28 PM[22m [36m[1m[vite][22m[39m [32mvite.config.js changed, restarting server...[39m
+[2m12:28:28 PM[22m [36m[1m[vite][22m[39m server restarted.
+[2m4:02:45 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/components/Sidebar.css[22m
+[2m4:02:55 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/components/Sidebar.jsx[22m
+[2m4:03:01 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/components/Sidebar.jsx[22m
+[2m4:03:15 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/App.jsx[22m
+[2m4:03:23 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/App.jsx[22m
+[2m4:03:33 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/components/Header.jsx[22m
+[2m4:03:38 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/components/Header.jsx[22m
+[2m4:03:53 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/components/Header.css[22m
+[2m4:04:09 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/App.css[22m
+[2m4:04:17 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/App.css[22m
+[2m8:39:51 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/App.jsx[22m
+[2m8:42:14 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/pages/Login.jsx, /src/pages/Teachers.jsx, /src/pages/Students.jsx, /src/pages/Enrollments.jsx, /src/pages/Dashboard.jsx, /src/components/Sidebar.jsx, /src/pages/Forms.jsx, /src/pages/TeachingLoad.jsx, /src/pages/Grades.jsx[22m
+[2m8:48:45 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/App.jsx[22m
+[2m8:58:44 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/pages/Login.jsx, /src/pages/Teachers.jsx, /src/pages/Students.jsx, /src/pages/Enrollments.jsx, /src/pages/Dashboard.jsx, /src/components/Sidebar.jsx, /src/pages/Forms.jsx, /src/pages/TeachingLoad.jsx, /src/pages/Grades.jsx[22m
+[2m10:00:16 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/pages/Teachers.jsx[22m
+[2m10:02:28 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/pages/Teachers.css[22m
+[2m10:02:36 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/pages/Teachers.jsx[22m
+[2m10:08:55 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/pages/Students.jsx[22m
+[2m10:08:58 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/pages/Enrollments.jsx[22m
+[2m10:14:22 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/pages/Students.css[22m
+[2m10:14:31 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/pages/Enrollments.css[22m
+[2m10:19:46 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/pages/Teachers.jsx[22m
+[2m10:19:46 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/pages/Students.jsx[22m
+[2m10:20:31 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/pages/TeachingLoad.jsx[22m
+[2m10:20:31 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/pages/Enrollments.jsx[22m
+[2m10:26:22 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/pages/Enrollments.jsx[22m
+[2m10:30:14 PM[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/pages/Enrollments.jsx[22m

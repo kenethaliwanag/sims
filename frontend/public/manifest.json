@@ -1,0 +1,12 @@
+{
+  "name": "SIMS - School Information Management System",
+  "short_name": "SIMS",
+  "description": "DepEd-compliant school management system",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#3b82f6",
+  "icons": [
+    { "src": "/icon-192.png", "sizes": "192x192", "type": "image/png" }
+  ]
+}

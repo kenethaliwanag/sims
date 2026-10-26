@@ -1,0 +1,1691 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Villa Antonio Elementary School — SIMS User Manual</title>
+<style>
+  :root {
+    --navy: #12325c;
+    --navy-deep: #0b2342;
+    --accent: #2f6bd8;
+    --accent-soft: #eaf1fc;
+    --ink: #1f2937;
+    --muted: #5b6472;
+    --line: #dbe2ea;
+    --soft: #f5f7fa;
+    --warn: #b45309;
+    --warn-bg: #fff7ed;
+    --danger: #b91c1c;
+    --danger-bg: #fef2f2;
+    --ok: #166534;
+    --ok-bg: #f0fdf4;
+  }
+
+  * { box-sizing: border-box; }
+
+  html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+
+  body {
+    margin: 0;
+    font-family: "Segoe UI", "Segoe UI Variable", Roboto, Arial, sans-serif;
+    font-size: 10.5pt;
+    line-height: 1.55;
+    color: var(--ink);
+    background: #fff;
+  }
+
+  .page { max-width: 210mm; margin: 0 auto; padding: 0; }
+
+  @page { size: A4; margin: 18mm 16mm 18mm 16mm; }
+
+  /* ---------- Cover ---------- */
+  .cover { page-break-after: always; }
+
+  .cover-band {
+    background: linear-gradient(135deg, var(--navy-deep) 0%, var(--navy) 60%, #1d4b8f 100%);
+    color: #fff;
+    padding: 14mm 12mm;
+    border-radius: 0 0 10mm 10mm;
+    display: flex;
+    align-items: center;
+    gap: 10mm;
+    min-height: 56mm;
+  }
+
+  .cover-band img { width: 30mm; height: 30mm; object-fit: contain; }
+
+  .cover-school { font-size: 11pt; letter-spacing: 0.16em; text-transform: uppercase; opacity: 0.9; margin: 0 0 2mm; }
+  .cover-school-name { font-size: 20pt; font-weight: 700; margin: 0; line-height: 1.2; }
+  .cover-district { font-size: 9.5pt; opacity: 0.82; margin: 2mm 0 0; }
+
+  .cover-body { padding: 14mm 12mm 0; }
+
+  .cover-kicker {
+    display: inline-block;
+    font-size: 9pt;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+    border: 1px solid #c7d7f2;
+    background: var(--accent-soft);
+    padding: 2mm 4mm;
+    border-radius: 99px;
+    font-weight: 600;
+  }
+
+  .cover-title {
+    font-size: 34pt;
+    line-height: 1.1;
+    color: var(--navy);
+    margin: 8mm 0 3mm;
+    letter-spacing: -0.01em;
+  }
+
+  .cover-title small { display: block; font-size: 15pt; font-weight: 500; color: var(--muted); margin-top: 5mm; letter-spacing: 0; }
+
+  .cover-rule { height: 1.6mm; width: 42mm; background: var(--accent); border-radius: 2px; margin: 9mm 0; }
+
+  .cover-lead { font-size: 11.5pt; color: var(--muted); max-width: 135mm; margin: 0; }
+
+  .cover-meta {
+    margin-top: 12mm;
+    border-top: 1px solid var(--line);
+    padding-top: 6mm;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4mm 10mm;
+    font-size: 9.5pt;
+  }
+
+  .cover-meta dt { text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); font-size: 8pt; margin-bottom: 1mm; }
+  .cover-meta dd { margin: 0; font-weight: 600; color: var(--ink); }
+
+  .cover-foot {
+    position: relative;
+    margin-top: 14mm;
+    font-size: 8.5pt;
+    color: var(--muted);
+    border-top: 1px solid var(--line);
+    padding-top: 4mm;
+    display: flex;
+    justify-content: space-between;
+    gap: 8mm;
+  }
+
+  /* ---------- Structure ---------- */
+  h1 {
+    font-size: 21pt;
+    color: var(--navy);
+    line-height: 1.15;
+    margin: 0 0 6mm;
+    padding-bottom: 3mm;
+    border-bottom: 2px solid var(--line);
+    page-break-before: always;
+    break-after: avoid;
+  }
+
+  h1 .num {
+    display: block;
+    font-size: 9pt;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 2.5mm;
+    font-weight: 700;
+  }
+
+  h2 {
+    font-size: 13.5pt;
+    color: var(--navy);
+    margin: 8mm 0 3mm;
+    break-after: avoid;
+  }
+
+  h3 {
+    font-size: 11pt;
+    color: var(--ink);
+    margin: 6mm 0 2mm;
+    break-after: avoid;
+  }
+
+  p { margin: 0 0 3mm; }
+
+  ul, ol { margin: 0 0 4mm; padding-left: 6mm; }
+  li { margin-bottom: 1.4mm; }
+  li:last-child { margin-bottom: 0; }
+
+  strong { color: var(--navy-deep); }
+  a { color: var(--accent); text-decoration: none; }
+
+  .lead { font-size: 11pt; color: var(--muted); margin-bottom: 6mm; }
+
+  .muted { color: var(--muted); }
+  .small { font-size: 9pt; }
+
+  /* ---------- TOC ---------- */
+  .toc { margin-top: 4mm; }
+
+  .toc-group { margin-bottom: 5mm; }
+
+  .toc-group-title {
+    font-size: 8.5pt;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--muted);
+    margin-bottom: 2mm;
+    font-weight: 700;
+  }
+
+  .toc ol { list-style: none; padding: 0; margin: 0; }
+
+  .toc li {
+    display: flex;
+    align-items: baseline;
+    gap: 2mm;
+    padding: 1.2mm 0;
+    border-bottom: 1px dotted #d8dfe8;
+  }
+
+  .toc .no { color: var(--accent); font-weight: 700; min-width: 9mm; }
+  .toc .label { font-weight: 600; }
+  .toc .desc { color: var(--muted); font-size: 8.5pt; margin-left: auto; text-align: right; }
+
+  /* ---------- Tables ---------- */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 3mm 0 5mm;
+    font-size: 9.5pt;
+    break-inside: auto;
+  }
+
+  thead th {
+    background: var(--navy);
+    color: #fff;
+    text-align: left;
+    padding: 2.4mm 3mm;
+    font-size: 8.5pt;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+
+  tbody td {
+    padding: 2.4mm 3mm;
+    border-bottom: 1px solid var(--line);
+    vertical-align: top;
+  }
+
+  tbody tr:nth-child(even) td { background: #fafbfd; }
+
+  tbody tr { break-inside: avoid; }
+
+  td.yes { color: var(--ok); font-weight: 600; }
+  td.no { color: var(--danger); font-weight: 600; }
+
+  table.tight { font-size: 9pt; }
+  table.tight td, table.tight th { padding: 2mm 2.6mm; }
+
+  /* ---------- Callouts ---------- */
+  .callout {
+    border-left: 3px solid var(--accent);
+    background: var(--accent-soft);
+    padding: 3.5mm 4mm;
+    border-radius: 0 4px 4px 0;
+    margin: 4mm 0;
+    font-size: 9.5pt;
+    break-inside: avoid;
+  }
+
+  .callout .ctitle {
+    font-size: 8pt;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: var(--accent);
+    margin-bottom: 1.4mm;
+  }
+
+  .callout.warn { border-color: #f0a33c; background: var(--warn-bg); }
+  .callout.warn .ctitle { color: var(--warn); }
+  .callout.danger { border-color: #ef7b7b; background: var(--danger-bg); }
+  .callout.danger .ctitle { color: var(--danger); }
+  .callout.ok { border-color: #4ade80; background: var(--ok-bg); }
+  .callout.ok .ctitle { color: var(--ok); }
+
+  .callout p:last-child { margin-bottom: 0; }
+
+  /* ---------- Steps ---------- */
+  ol.steps { counter-reset: step; list-style: none; padding-left: 0; margin: 3mm 0 5mm; }
+
+  ol.steps > li {
+    counter-increment: step;
+    position: relative;
+    padding-left: 10mm;
+    margin-bottom: 3mm;
+  }
+
+  ol.steps > li::before {
+    content: counter(step);
+    position: absolute;
+    left: 0;
+    top: 0.2mm;
+    width: 6mm;
+    height: 6mm;
+    border-radius: 50%;
+    background: var(--navy);
+    color: #fff;
+    font-size: 8pt;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* ---------- Cards ---------- */
+  .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4mm; margin: 4mm 0 6mm; }
+
+  .card {
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    padding: 4mm;
+    background: #fff;
+    break-inside: avoid;
+  }
+
+  .card .k { font-size: 8pt; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); font-weight: 700; margin-bottom: 1.5mm; }
+  .card .t { font-size: 11pt; font-weight: 700; color: var(--navy); margin: 0 0 1.5mm; }
+  .card p { font-size: 9pt; color: var(--muted); margin: 0; }
+
+  .rule { height: 2px; background: var(--line); border: 0; margin: 7mm 0; }
+
+  /* ---------- Diagram ---------- */
+  figure { margin: 5mm 0 7mm; break-inside: avoid; }
+  figure svg { width: 100%; height: auto; }
+  figcaption { font-size: 8.5pt; color: var(--muted); text-align: center; margin-top: 2mm; }
+
+  /* ---------- Definition lists ---------- */
+  dl.defs { margin: 3mm 0 5mm; }
+  dl.defs div { display: grid; grid-template-columns: 38mm 1fr; gap: 4mm; padding: 2mm 0; border-bottom: 1px solid var(--line); }
+  dl.defs dt { font-weight: 700; color: var(--navy); font-size: 9.5pt; }
+  dl.defs dd { margin: 0; font-size: 9.5pt; }
+
+  .keep { break-inside: avoid; }
+  .page-break { page-break-before: always; }
+
+  /* FAQ answers are short; tighter headings keep the section on one page. */
+  .faq h3 { margin-top: 3.5mm; }
+
+  .tag {
+    display: inline-block;
+    font-size: 8pt;
+    font-weight: 700;
+    padding: 0.6mm 2mm;
+    border-radius: 3px;
+    background: var(--accent-soft);
+    color: var(--accent);
+    letter-spacing: 0.04em;
+  }
+
+  .tag.admin { background: #eef2ff; color: #3730a3; }
+  .tag.teacher { background: #ecfdf5; color: #047857; }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- ============ COVER ============ -->
+  <section class="cover">
+    <div class="cover-band">
+      <img src="../frontend/src/img/vaes-logo.png" alt="Villa Antonio Elementary School seal">
+      <div>
+        <p class="cover-school">Republic of the Philippines · Department of Education</p>
+        <p class="cover-school-name">Villa Antonio Elementary School</p>
+        <p class="cover-district">Calapan East District</p>
+      </div>
+    </div>
+
+    <div class="cover-body">
+      <span class="cover-kicker">User Manual and Operations Guide</span>
+
+      <h1 class="cover-title" style="border:0; padding:0; margin-top:8mm; page-break-before:avoid;">
+        School Information<br>Management System
+        <small>SIMS · Version 1.0</small>
+      </h1>
+
+      <div class="cover-rule"></div>
+
+      <p class="cover-lead">
+        A practical guide for the School Head and teachers: enrolling learners,
+        assigning teaching loads, encoding quarterly grades, and generating
+        official DepEd forms — all from the school's own network.
+      </p>
+
+      <dl class="cover-meta">
+        <div><dt>Prepared for</dt><dd>School Head and Faculty</dd></div>
+        <div><dt>Prepared by</dt><dd>Project Development Team</dd></div>
+        <div><dt>Document version</dt><dd>1.0</dd></div>
+        <div><dt>Date issued</dt><dd>October 2026</dd></div>
+        <div><dt>System environment</dt><dd>On-premise, school LAN</dd></div>
+        <div><dt>Classification</dt><dd>Internal — for school use</dd></div>
+      </dl>
+
+      <div class="cover-foot">
+        <span>Villa Antonio Elementary School · Calapan East District</span>
+        <span>Confidential · Internal Use Only</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TOC ============ -->
+  <section>
+    <h1 style="page-break-before:avoid;"><span class="num">Contents</span>What is in this manual</h1>
+
+    <p class="lead" style="margin-bottom:5mm;">
+      Chapters 1 to 4 explain the system and how access works. Chapters 5 and 6 are
+      task-by-task guides for each role. Chapters 7 to 11 cover the rules, IT
+      operations, data privacy, support, and known limitations.
+    </p>
+
+    <div class="toc">
+      <div class="toc-group">
+        <div class="toc-group-title">Part I — Orientation</div>
+        <ol>
+          <li><span class="no">1</span><span class="label">About This Manual</span><span class="desc">Purpose, audience, conventions</span></li>
+          <li><span class="no">2</span><span class="label">System Overview</span><span class="desc">Modules, architecture, scope</span></li>
+          <li><span class="no">3</span><span class="label">Getting Started</span><span class="desc">Signing in, passwords, navigation</span></li>
+          <li><span class="no">4</span><span class="label">Roles and Permissions</span><span class="desc">Who can do what, and why</span></li>
+        </ol>
+      </div>
+
+      <div class="toc-group">
+        <div class="toc-group-title">Part II — Role Guides</div>
+        <ol>
+          <li><span class="no">5</span><span class="label">School Head Guide</span><span class="desc">Teachers, loads, monitoring, forms</span></li>
+          <li><span class="no">6</span><span class="label">Teacher Guide</span><span class="desc">Enrolment, grades, advisory class</span></li>
+        </ol>
+      </div>
+
+      <div class="toc-group">
+        <div class="toc-group-title">Part III — Reference and Operations</div>
+        <ol>
+          <li><span class="no">7</span><span class="label">Rules Reference</span><span class="desc">Grade computation, scoping, data rules</span></li>
+          <li><span class="no">8</span><span class="label">Deployment and IT Operations</span><span class="desc">Server, network, backup, updates</span></li>
+          <li><span class="no">9</span><span class="label">Security and Data Privacy</span><span class="desc">Accounts, audit trail, RA 10173</span></li>
+          <li><span class="no">10</span><span class="label">Troubleshooting and FAQ</span><span class="desc">Common problems and answers</span></li>
+          <li><span class="no">11</span><span class="label">Known Limitations and Roadmap</span><span class="desc">What the system does not do yet</span></li>
+        </ol>
+      </div>
+
+      <div class="toc-group">
+        <div class="toc-group-title">Appendices</div>
+        <ol>
+          <li><span class="no">A</span><span class="label">Quick Reference Card</span><span class="desc">One-page task list per role</span></li>
+          <li><span class="no">B</span><span class="label">Glossary</span><span class="desc">DepEd and system terms</span></li>
+          <li><span class="no">C</span><span class="label">First-Run Checklist</span><span class="desc">Go-live steps for the School Head</span></li>
+        </ol>
+      </div>
+    </div>
+
+    <div class="callout" style="margin-top:5mm;">
+      <div class="ctitle">Document control</div>
+      <p>
+        <strong>Version 1.0</strong> · October 2026 · Initial release for client presentation.
+        Changes to workflows, permissions, or deployment should be reflected here and the
+        version number incremented.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============ 1 ============ -->
+  <section>
+    <h1><span class="num">Chapter 1</span>About This Manual</h1>
+
+    <p class="lead">
+      This manual explains how to use and operate the School Information Management
+      System (SIMS) of Villa Antonio Elementary School. It is written for the people who
+      will use the system every day, not for programmers.
+    </p>
+
+    <h2>1.1 Purpose</h2>
+    <p>
+      SIMS replaces the paper-and-spreadsheet routine of enrolment, class lists, and
+      quarterly grade recording with one system shared by the School Head and the
+      teaching staff. The manual is intended to:
+    </p>
+    <ul>
+      <li>Give each role a clear, step-by-step guide to its daily tasks.</li>
+      <li>Document the rules the system enforces, so results are predictable and auditable.</li>
+      <li>Explain how the system is hosted inside the school and how it is kept safe.</li>
+      <li>Provide a single reference for training, turnover, and future maintenance.</li>
+    </ul>
+
+    <h2>1.2 Who should read what</h2>
+    <table class="tight">
+      <thead>
+        <tr><th style="width:26%">Reader</th><th style="width:30%">Read first</th><th>Then</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>School Head</strong></td>
+          <td>Chapters 2, 3, 4</td>
+          <td>Chapter 5 (daily work), Chapter 9 (privacy), Appendix C (go-live)</td>
+        </tr>
+        <tr>
+          <td><strong>Teachers</strong></td>
+          <td>Chapters 3, 4</td>
+          <td>Chapter 6 (enrolment and grades), Chapter 10 (troubleshooting)</td>
+        </tr>
+        <tr>
+          <td><strong>School IT coordinator</strong></td>
+          <td>Chapters 2, 8, 9</td>
+          <td>Chapter 10, Appendix C</td>
+        </tr>
+        <tr>
+          <td><strong>Evaluators / client reviewers</strong></td>
+          <td>Chapters 2, 4, 7, 11</td>
+          <td>Chapter 8 (deployment model), Chapter 9 (compliance)</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>1.3 Conventions used</h2>
+    <dl class="defs">
+      <div><dt>Bold labels</dt><dd>Text that matches a button, menu item, field, or page in the system, for example <strong>Enroll Student</strong> or <strong>Teaching Load</strong>.</dd></div>
+      <div><dt>Numbered steps</dt><dd>A task to perform in order. Steps assume you are already signed in.</dd></div>
+      <div><dt>Callout boxes</dt><dd>Blue boxes contain useful context; amber boxes contain cautions; red boxes mark actions that cannot be undone; green boxes confirm expected results.</dd></div>
+      <div><dt>Role tags</dt><dd><span class="tag admin">SCHOOL HEAD</span> and <span class="tag teacher">TEACHER</span> mark which role a task belongs to.</dd></div>
+    </dl>
+
+    <div class="callout">
+      <div class="ctitle">A note on terminology</div>
+      <p>
+        The system uses “School Head” for the administrator account and “Teacher” for
+        faculty accounts. In the interface, the School Head may appear as
+        <strong>Admin</strong> in the role badge — both refer to the same role.
+      </p>
+    </div>
+
+    <h2>1.4 Support</h2>
+    <p>
+      For account issues, data corrections, or system errors, contact the school's
+      designated SIMS administrator or IT coordinator. Record the page you were on, the
+      exact message shown, and the time it happened — this makes problems much faster to
+      resolve.
+    </p>
+    <table class="tight">
+      <thead><tr><th style="width:38%">Contact</th><th>Details</th></tr></thead>
+      <tbody>
+        <tr><td>School SIMS administrator</td><td>_____________________________</td></tr>
+        <tr><td>IT coordinator / service provider</td><td>_____________________________</td></tr>
+        <tr><td>School Head's office</td><td>_____________________________</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- ============ 2 ============ -->
+  <section>
+    <h1><span class="num">Chapter 2</span>System Overview</h1>
+
+    <p class="lead">
+      SIMS is a web application that runs on a computer inside the school. Staff open it
+      in a browser; nothing is installed on teacher devices and nothing is stored online.
+    </p>
+
+    <h2>2.1 What the system does</h2>
+    <div class="cards">
+      <div class="card">
+        <div class="k">People</div>
+        <p class="t">Teachers</p>
+        <p>Official faculty records, positions, and the advisory class each teacher handles.</p>
+      </div>
+      <div class="card">
+        <div class="k">People</div>
+        <p class="t">Learners</p>
+        <p>Student records with LRN, personal details, guardian contacts, and enrolment history.</p>
+      </div>
+      <div class="card">
+        <div class="k">Operations</div>
+        <p class="t">Enrolment</p>
+        <p>Grade level, section, and school year per learner, with live headcounts by sex.</p>
+      </div>
+      <div class="card">
+        <div class="k">Instruction</div>
+        <p class="t">Teaching Load</p>
+        <p>The subjects and sections each teacher is officially assigned to handle.</p>
+      </div>
+      <div class="card">
+        <div class="k">Records</div>
+        <p class="t">Grades</p>
+        <p>Quarterly ratings Q1–Q4, automatic final rating, and PASSED/FAILED remarks.</p>
+      </div>
+      <div class="card">
+        <div class="k">Reports</div>
+        <p class="t">DepEd Forms</p>
+        <p>SF1 School Register, SF9 Progress Report Card, and SF10 Permanent Record as PDFs.</p>
+      </div>
+    </div>
+
+    <h2>2.2 How the system is structured</h2>
+    <p>
+      The system has three parts: the interface staff see in the browser, the application
+      that applies the rules and permissions, and the school database. All three run on a
+      single computer inside the school.
+    </p>
+
+    <figure>
+      <svg viewBox="0 0 860 250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Architecture diagram">
+        <defs>
+          <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+            <path d="M0,0 L0,6 L9,3 z" fill="#8aa0bd"/>
+          </marker>
+        </defs>
+
+        <!-- Devices -->
+        <rect x="10" y="20" width="150" height="42" rx="6" fill="#eaf1fc" stroke="#c7d7f2"/>
+        <text x="85" y="39" text-anchor="middle" font-family="Segoe UI" font-size="12" fill="#12325c" font-weight="600">School Head PC</text>
+        <text x="85" y="53" text-anchor="middle" font-family="Segoe UI" font-size="9" fill="#5b6472">browser</text>
+
+        <rect x="10" y="80" width="150" height="42" rx="6" fill="#ecfdf5" stroke="#bbf7d0"/>
+        <text x="85" y="99" text-anchor="middle" font-family="Segoe UI" font-size="12" fill="#065f46" font-weight="600">Teacher devices</text>
+        <text x="85" y="113" text-anchor="middle" font-family="Segoe UI" font-size="9" fill="#5b6472">laptop / tablet</text>
+
+        <rect x="10" y="140" width="150" height="42" rx="6" fill="#ecfdf5" stroke="#bbf7d0"/>
+        <text x="85" y="159" text-anchor="middle" font-family="Segoe UI" font-size="12" fill="#065f46" font-weight="600">Teacher devices</text>
+        <text x="85" y="173" text-anchor="middle" font-family="Segoe UI" font-size="9" fill="#5b6472">laptop / tablet</text>
+
+        <!-- LAN -->
+        <line x1="160" y1="41" x2="250" y2="105" stroke="#8aa0bd" stroke-width="1.4" marker-end="url(#arrow)"/>
+        <line x1="160" y1="101" x2="250" y2="105" stroke="#8aa0bd" stroke-width="1.4" marker-end="url(#arrow)"/>
+        <line x1="160" y1="161" x2="250" y2="115" stroke="#8aa0bd" stroke-width="1.4" marker-end="url(#arrow)"/>
+
+        <rect x="250" y="72" width="120" height="66" rx="6" fill="#fff" stroke="#cbd5e1"/>
+        <text x="310" y="98" text-anchor="middle" font-family="Segoe UI" font-size="12" fill="#12325c" font-weight="600">School LAN</text>
+        <text x="310" y="114" text-anchor="middle" font-family="Segoe UI" font-size="9" fill="#5b6472">wired or Wi-Fi</text>
+        <text x="310" y="127" text-anchor="middle" font-family="Segoe UI" font-size="9" fill="#5b6472">no internet needed</text>
+
+        <line x1="370" y1="105" x2="450" y2="105" stroke="#8aa0bd" stroke-width="1.4" marker-end="url(#arrow)"/>
+
+        <!-- Server -->
+        <rect x="450" y="20" width="250" height="170" rx="8" fill="#0b2342"/>
+        <text x="575" y="45" text-anchor="middle" font-family="Segoe UI" font-size="12" fill="#ffffff" font-weight="700">School server PC</text>
+        <text x="575" y="60" text-anchor="middle" font-family="Segoe UI" font-size="9" fill="#b7c7dd">runs during school hours</text>
+
+        <rect x="468" y="75" width="214" height="36" rx="5" fill="#163b6b" stroke="#2f6bd8"/>
+        <text x="575" y="97" text-anchor="middle" font-family="Segoe UI" font-size="11" fill="#ffffff">Web app + API (one process)</text>
+
+        <rect x="468" y="120" width="214" height="34" rx="5" fill="#163b6b" stroke="#2f6bd8"/>
+        <text x="575" y="141" text-anchor="middle" font-family="Segoe UI" font-size="11" fill="#ffffff">Business rules and permissions</text>
+
+        <rect x="468" y="160" width="214" height="22" rx="5" fill="#1d4b8f" stroke="#2f6bd8"/>
+        <text x="575" y="175" text-anchor="middle" font-family="Segoe UI" font-size="10" fill="#dbe9ff">Local database (sims.db)</text>
+
+        <!-- Backup -->
+        <line x1="700" y1="105" x2="770" y2="105" stroke="#8aa0bd" stroke-width="1.4" marker-end="url(#arrow)"/>
+        <rect x="770" y="75" width="80" height="60" rx="6" fill="#fff7ed" stroke="#f0a33c"/>
+        <text x="810" y="98" text-anchor="middle" font-family="Segoe UI" font-size="10" fill="#92400e" font-weight="600">Nightly</text>
+        <text x="810" y="111" text-anchor="middle" font-family="Segoe UI" font-size="10" fill="#92400e" font-weight="600">backup</text>
+        <text x="810" y="124" text-anchor="middle" font-family="Segoe UI" font-size="8.5" fill="#92400e">USB / second PC</text>
+      </svg>
+      <figcaption>Figure 1. Deployment model — all processing and data stay inside the school.</figcaption>
+    </figure>
+
+    <h2>2.3 What the system deliberately does not do</h2>
+    <p>
+      Being clear about scope prevents misaligned expectations. SIMS is a school records
+      system, not a full learning management system. It does not handle attendance,
+      lesson plans, learner portfolios, parent logins, or SMS/e-mail notifications. The
+      full list of current limitations is in Chapter 11.
+    </p>
+
+    <div class="callout">
+      <div class="ctitle">Offline by design</div>
+      <p>
+        Because everything runs on the school's own computer, the system keeps working
+        even if the school's internet connection is down. It only needs the local network
+        between staff devices and the server.
+      </p>
+    </div>
+
+    <h2>2.4 Technology summary</h2>
+    <table class="tight">
+      <thead><tr><th style="width:24%">Layer</th><th style="width:34%">Technology</th><th>Purpose</th></tr></thead>
+      <tbody>
+        <tr><td>Interface</td><td>React 18 progressive web app</td><td>Browser-based screens; no installation on teacher devices.</td></tr>
+        <tr><td>Application</td><td>ASP.NET Core (.NET 8) Web API</td><td>Applies permissions, computes final grades, generates PDFs.</td></tr>
+        <tr><td>Database</td><td>SQLite (single file)</td><td>Stores all school records on the server's disk.</td></tr>
+        <tr><td>Reports</td><td>QuestPDF</td><td>Produces SF1, SF9, and SF10 documents.</td></tr>
+        <tr><td>Hosting</td><td>Windows PC on the school LAN</td><td>No subscription, no external server, no data leaves the school.</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- ============ 3 ============ -->
+  <section>
+    <h1><span class="num">Chapter 3</span>Getting Started</h1>
+
+    <p class="lead">
+      Everything starts with a browser and a school account. This chapter covers signing
+      in, changing the password, and finding your way around.
+    </p>
+
+    <h2>3.1 What you need</h2>
+    <ul>
+      <li>A laptop, desktop, or tablet connected to the school network (wired or school Wi-Fi).</li>
+      <li>A current browser — Chrome, Edge, or Firefox. Internet Explorer is not supported.</li>
+      <li>The SIMS address from your IT coordinator, for example <strong>http://192.168.1.50:5000</strong>.</li>
+      <li>The username and initial password issued by the School Head.</li>
+    </ul>
+
+    <div class="callout">
+      <div class="ctitle">Bookmark it</div>
+      <p>
+        Save the SIMS address as a browser bookmark or add it to your desktop. The exact
+        address is fixed per school — ask your IT coordinator if you are unsure.
+      </p>
+    </div>
+
+    <h2>3.2 Signing in</h2>
+    <ol class="steps">
+      <li>Open your browser and go to the SIMS address.</li>
+      <li>Enter your <strong>Username</strong> and <strong>Password</strong>.</li>
+      <li>Select <strong>Login</strong>.</li>
+      <li>The dashboard for your role opens. The sidebar on the left lists only the pages your account is allowed to use.</li>
+    </ol>
+
+    <div class="callout warn">
+      <div class="ctitle">First sign-in</div>
+      <p>
+        If the School Head created your account, you received an initial password. Change
+        it immediately (next section). Until you do, the School Head still knows your
+        credentials.
+      </p>
+    </div>
+
+    <h2>3.3 Changing your password</h2>
+    <p><span class="tag admin">SCHOOL HEAD</span> <span class="tag teacher">TEACHER</span> Available to every signed-in user.</p>
+    <ol class="steps">
+      <li>In the sidebar footer, select <strong>Change Password</strong>.</li>
+      <li>Enter your <strong>current password</strong>.</li>
+      <li>Enter a <strong>new password</strong> of at least 6 characters.</li>
+      <li>Enter the same password again to confirm.</li>
+      <li>Select <strong>Change Password</strong> to save.</li>
+    </ol>
+    <p>
+      The new password takes effect immediately. The old password stops working at once —
+      anyone who knew it, including the School Head, can no longer sign in with it.
+    </p>
+
+    <div class="callout danger">
+      <div class="ctitle">There is no self-service reset</div>
+      <p>
+        If you forget your password, you cannot recover it from the login screen. Contact
+        the school's SIMS administrator so your password can be reset on the server. Do not
+        share accounts or write passwords on visible notes.
+      </p>
+    </div>
+
+    <h2>3.4 Finding your way around</h2>
+    <p>
+      The left sidebar is the main navigation. Which items appear depends on your role.
+      The header at the top of every page shows your name, the current page, and a
+      notifications and settings icon. The footer of the sidebar holds
+      <strong>Change Password</strong> and <strong>Logout</strong>.
+    </p>
+
+    <table class="tight">
+      <thead><tr><th style="width:30%">Page</th><th style="width:16%">School Head</th><th>What it is for</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Dashboard</strong></td><td class="yes">Yes</td><td>Enrolment totals and, for the School Head, the latest activity by teachers.</td></tr>
+        <tr><td><strong>Teachers</strong></td><td class="yes">Yes</td><td>Faculty records and teacher account creation. School Head only.</td></tr>
+        <tr><td><strong>Teaching Load</strong></td><td class="yes">Yes</td><td>Which teacher handles which subject and section. School Head only.</td></tr>
+        <tr><td><strong>Students</strong></td><td class="yes">Yes</td><td>Learner records. Read-only for the School Head; teachers see their advisees.</td></tr>
+        <tr><td><strong>Enrollments</strong></td><td class="yes">Yes</td><td>Grade level, section, and school year per learner. Enrolment is done by teachers.</td></tr>
+        <tr><td><strong>Grades</strong></td><td class="yes">Yes</td><td>Quarterly ratings and final ratings. Read-only for the School Head.</td></tr>
+        <tr><td><strong>DepEd Forms</strong></td><td class="yes">Yes</td><td>Generate SF1, SF9, and SF10 PDFs.</td></tr>
+      </tbody>
+    </table>
+
+    <h2>3.5 Signing out and session length</h2>
+    <p>
+      Select <strong>Logout</strong> at the bottom of the sidebar, especially on a shared
+      computer. Sessions remain valid for up to 8 hours; after that you are returned to
+      the login screen automatically.
+    </p>
+
+    <div class="callout">
+      <div class="ctitle">Shared devices</div>
+      <p>
+        Always log out on a shared staff computer. Closing the browser tab is not the same
+        as logging out — the session can stay active for the rest of the school day.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============ 4 ============ -->
+  <section>
+    <h1><span class="num">Chapter 4</span>Roles and Permissions</h1>
+
+    <p class="lead">
+      SIMS has two roles. Permissions are enforced by the application on every request,
+      not just hidden in the interface, so a teacher cannot perform School Head actions by
+      guessing a web address.
+    </p>
+
+    <h2>4.1 The two roles</h2>
+    <dl class="defs">
+      <div>
+        <dt>School Head</dt>
+        <dd>
+          The administrator. Maintains faculty records, creates teacher logins, defines the
+          official teaching load, and monitors enrolment, grades, and recent activity. Has
+          read-only access to learner data and grades — the School Head cannot encode grades.
+        </dd>
+      </div>
+      <div>
+        <dt>Teacher</dt>
+        <dd>
+          Faculty account. Enrols learners into their own advisory class, records grades for
+          their advisees and for the subjects and sections formally assigned to them, and
+          generates DepEd forms.
+        </dd>
+      </div>
+    </dl>
+
+    <h2>4.2 Permission matrix</h2>
+    <table>
+      <thead>
+        <tr><th style="width:44%">Task</th><th style="width:16%">School Head</th><th>Teacher</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>View the dashboard</td><td class="yes">All enrollees</td><td class="yes">Own advisory only</td></tr>
+        <tr><td>Add, edit, or delete teacher records</td><td class="yes">Yes</td><td class="no">No</td></tr>
+        <tr><td>Create a teacher login</td><td class="yes">Yes</td><td class="no">No</td></tr>
+        <tr><td>Assign teaching load (subject + section)</td><td class="yes">Yes</td><td class="no">No</td></tr>
+        <tr><td>View learner records</td><td class="yes">All (read-only)</td><td class="yes">Advisees only</td></tr>
+        <tr><td>Enrol a learner</td><td class="no">No</td><td class="yes">Own grade level</td></tr>
+        <tr><td>Edit or remove an enrolment</td><td class="no">No</td><td class="yes">Own advisees only</td></tr>
+        <tr><td>Encode, edit, or delete grades</td><td class="no">No</td><td class="yes">Advisees + assigned subject/section</td></tr>
+        <tr><td>Generate SF1 / SF9 / SF10</td><td class="yes">Yes</td><td class="yes">Yes</td></tr>
+        <tr><td>View recent activity log</td><td class="yes">Yes</td><td class="no">No</td></tr>
+        <tr><td>Change own password</td><td class="yes">Yes</td><td class="yes">Yes</td></tr>
+      </tbody>
+    </table>
+
+    <h2>4.3 Advisory class versus subject teaching</h2>
+    <p>
+      A teacher has two different kinds of access, and they can hold both at the same time
+      without conflict:
+    </p>
+
+    <div class="cards" style="grid-template-columns:1fr 1fr;">
+      <div class="card">
+        <div class="k">Access type</div>
+        <p class="t">Advisory class</p>
+        <p>
+          The learners the teacher enrolled and is responsible for. The teacher can edit
+          their learner records, their enrolment, and <em>all</em> subject grades for those
+          learners.
+        </p>
+      </div>
+      <div class="card">
+        <div class="k">Access type</div>
+        <p class="t">Subject teaching load</p>
+        <p>
+          A specific subject in a specific section assigned by the School Head. The teacher
+          can encode <em>only that subject</em> for the learners in that section.
+        </p>
+      </div>
+    </div>
+
+    <p>
+      Example: Ms. Liwanag advises Grade 2 — Tulingan and also teaches Mathematics to
+      Grade 5 — Sampaguita. She can encode every subject for her Tulingan advisees, but
+      only Mathematics for the Sampaguita learners. She cannot see or encode anything for
+      Grade 4 — Shark.
+    </p>
+
+    <h2>4.4 What “advisory” means in practice</h2>
+    <p>
+      A teacher becomes the adviser of a class by enrolling those learners. The enrolment
+      records the teacher who created it, and that link is what grants advisory access.
+      This is why the School Head cannot enrol learners on a teacher's behalf: enrolment is
+      deliberately a teacher action, and it establishes responsibility.
+    </p>
+
+    <div class="callout warn">
+      <div class="ctitle">Section names must match exactly</div>
+      <p>
+        Teaching load and enrolment compare section names as text. “Tulingan” and
+        “tulingan” are different sections as far as the system is concerned, and the
+        teacher would not get access to the enrolment. Use the section suggestions shown
+        when assigning load, and keep spelling consistent.
+      </p>
+    </div>
+
+    <h2>4.5 Separation of duties</h2>
+    <ul>
+      <li>The School Head <strong>creates</strong> teacher logins but <strong>cannot sign in as a teacher</strong>.</li>
+      <li>Only the account owner can change a password; the School Head cannot see new passwords after a teacher changes them.</li>
+      <li>Only teachers encode grades; the School Head can review but not alter them.</li>
+      <li>Deleting a teacher record also deletes that teacher's login, immediately removing access.</li>
+    </ul>
+  </section>
+
+  <!-- ============ 5 ============ -->
+  <section>
+    <h1><span class="num">Chapter 5</span>School Head Guide</h1>
+
+    <p class="lead">
+      This chapter follows the School Head's routine, from setting up the school year to
+      monitoring the work teachers do.
+    </p>
+
+    <h2>5.1 Dashboard</h2>
+    <p>
+      After signing in, the dashboard summarises the active school year: total enrollees,
+      male and female counts, and the school year label. Below the totals, the
+      <strong>Recent Activity</strong> panel lists the latest student, enrolment, and grade
+      changes made by teachers.
+    </p>
+    <ul>
+      <li>Each row shows the teacher's name, what they did, their role, and how long ago it happened.</li>
+      <li>Select <strong>Refresh</strong> to load newer entries; the list is not live-updating.</li>
+      <li>Hover over the relative time to see the exact date and time.</li>
+    </ul>
+
+    <div class="callout">
+      <div class="ctitle">What the activity log is for</div>
+      <p>
+        It is a monitoring aid, not a full audit trail: it shows the ten most recent
+        changes. Use it to confirm that enrolment and grade entry are progressing, and to
+        spot corrections that may need follow-up.
+      </p>
+    </div>
+
+    <h2>5.2 Managing teachers</h2>
+    <p><span class="tag admin">SCHOOL HEAD</span></p>
+    <p>
+      <strong>Teachers</strong> lists the faculty with name, position, advisory class, and
+      account status. The <strong>Advisory Class</strong> column is derived from enrolment
+      records, so it reflects reality rather than a separate setting.
+    </p>
+
+    <h3>Adding a teacher</h3>
+    <ol class="steps">
+      <li>Open <strong>Teachers</strong> and select <strong>Add Teacher</strong>.</li>
+      <li>Complete the personal and employment fields: name, gender, birth date, address, position, and marital status.</li>
+      <li>Set the <strong>Assigned Grade Level</strong> — this controls which grade level the teacher may enrol learners into.</li>
+      <li>Optionally list the subjects the teacher handles. This is descriptive; actual grade permissions come from Teaching Load.</li>
+      <li>Select <strong>Save</strong>.</li>
+    </ol>
+
+    <h3>Editing or deleting a teacher</h3>
+    <p>
+      Use the pencil icon to correct details. The trash icon deletes the teacher and, if
+      they have a login, that login as well — the person can no longer sign in. Deletion is
+      permanent and should only be used for staff who have left or records created in error.
+    </p>
+
+    <h2>5.3 Creating a teacher login</h2>
+    <p><span class="tag admin">SCHOOL HEAD</span></p>
+    <ol class="steps">
+      <li>On <strong>Teachers</strong>, select the key icon on the teacher's row.</li>
+      <li>Enter a <strong>username</strong> (for example <code>juan.delacruz</code>) and an <strong>initial password</strong>.</li>
+      <li>Select <strong>Create Login</strong>.</li>
+      <li>Hand the credentials to the teacher in person. Ask them to change the password on first sign-in.</li>
+    </ol>
+
+    <div class="callout warn">
+      <div class="ctitle">You will not know the final password</div>
+      <p>
+        Once the teacher changes their password through <strong>Change Password</strong>,
+        the initial password stops working. This is intentional: it protects teacher
+        accounts and keeps the School Head out of individual logins.
+      </p>
+    </div>
+
+    <h2>5.4 Assigning teaching load</h2>
+    <p><span class="tag admin">SCHOOL HEAD</span></p>
+    <p>
+      Teaching Load is the single source of truth for what each teacher may encode. A
+      teacher can only record grades for the exact subject and section pairs assigned here.
+    </p>
+    <ol class="steps">
+      <li>Open <strong>Teaching Load</strong> and select <strong>Assign Subject</strong>.</li>
+      <li>Choose the <strong>teacher</strong>.</li>
+      <li>Choose the <strong>subject</strong>. Subjects are grouped by grade level, because a subject belongs to one grade.</li>
+      <li>Enter the <strong>section</strong>. Use the suggested sections from existing enrolments whenever possible.</li>
+      <li>Select <strong>Save</strong>.</li>
+    </ol>
+    <p>
+      The table lists every assignment with the teacher, grade level, subject, section, and
+      school year. The trash icon removes an assignment; the change takes effect
+      immediately, so a teacher loses encoding rights for that subject the next time they
+      load the page.
+    </p>
+
+    <div class="callout">
+      <div class="ctitle">Mid-year changes</div>
+      <p>
+        When a teacher takes over a subject or section, add the new assignment. When they
+        hand it over, remove the old one. There is no need to wait for a new school year;
+        access follows the current load.
+      </p>
+    </div>
+
+    <h2>5.5 Students</h2>
+    <p><span class="tag admin">SCHOOL HEAD</span></p>
+    <p>
+      <strong>Students</strong> is a read-only directory of learner records: LRN, name,
+      gender, birth date, and grade level. Use the search box for a name or LRN, and the
+      grade-level dropdown to narrow the list. Select <strong>View</strong> on a row to see
+      guardian details, address, previous school, and enrolment status.
+    </p>
+
+    <h2>5.6 Enrollments</h2>
+    <p><span class="tag admin">SCHOOL HEAD</span></p>
+    <p>
+      <strong>Enrollments</strong> shows every learner's grade level, section, school
+      year, and enrolment date. It is read-only for the School Head — enrolment is a
+      teacher responsibility, and the enrolment record establishes which teacher is the
+      adviser. Use this page to verify section assignments and spot duplicates.
+    </p>
+
+    <h2>5.7 Grades</h2>
+    <p><span class="tag admin">SCHOOL HEAD</span></p>
+    <p>
+      <strong>Grades</strong> groups learners by grade level. Expand a grade level to see
+      its learners, then select a learner to view every subject's quarterly ratings, final
+      rating, and remarks. The School Head cannot edit grades; corrections must be made by
+      the teacher who owns the class.
+    </p>
+
+    <h2>5.8 DepEd Forms</h2>
+    <p><span class="tag admin">SCHOOL HEAD</span> <span class="tag teacher">TEACHER</span></p>
+    <p>
+      The generator produces official PDFs from the records already in the system. Choose
+      a form card, set the options, then select <strong>Generate PDF</strong>; the file is
+      downloaded to your device.
+    </p>
+    <table class="tight">
+      <thead><tr><th style="width:18%">Form</th><th style="width:34%">Purpose</th><th>Required selection</th></tr></thead>
+      <tbody>
+        <tr><td><strong>SF1</strong></td><td>School Register — master list of enrolled learners</td><td>Grade level, or leave empty for all grades</td></tr>
+        <tr><td><strong>SF9</strong></td><td>Progress Report Card — quarterly grades per learner</td><td>One learner</td></tr>
+        <tr><td><strong>SF10</strong></td><td>Permanent Record — academic history per learner</td><td>One learner</td></tr>
+      </tbody>
+    </table>
+
+    <div class="callout">
+      <div class="ctitle">Generate from complete data</div>
+      <p>
+        Forms reflect what is recorded. Generate SF9 only after grades are encoded, and
+        confirm the learner's enrolment before generating SF1 or SF10.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============ 6 ============ -->
+  <section>
+    <h1><span class="num">Chapter 6</span>Teacher Guide</h1>
+
+    <p class="lead">
+      A teacher's work runs from enrolment at the start of the year to grades and report
+      cards at the end of each quarter. This chapter covers each step.
+    </p>
+
+    <h2>6.1 What you will see</h2>
+    <p>
+      Teachers see five pages: <strong>Dashboard</strong>, <strong>Students</strong>,
+      <strong>Enrollments</strong>, <strong>Grades</strong>, and
+      <strong>DepEd Forms</strong>. The dashboard counts only your own advisory class, and
+      the learner lists are limited to your advisees — you will not see other teachers'
+      classes.
+    </p>
+
+    <h2>6.2 Enrolling a learner</h2>
+    <p><span class="tag teacher">TEACHER</span></p>
+    <p>
+      Enrolment is how a learner becomes part of your advisory class. Do this before
+      encoding any grade.
+    </p>
+    <ol class="steps">
+      <li>Open <strong>Enrollments</strong> and select <strong>Enroll Student</strong>.</li>
+      <li>Enter the learner's <strong>LRN</strong>, name, sex, and birth date.</li>
+      <li>Add the address, parent or guardian name and contact number, and previous school (use “N/A” if not applicable).</li>
+      <li>Confirm the <strong>Grade Level</strong> — it defaults to your assigned grade level and the system will reject a different one.</li>
+      <li>Enter the <strong>Section</strong>. Use the section name agreed with the School Head.</li>
+      <li>Select <strong>Save Enrollment</strong>.</li>
+    </ol>
+
+    <div class="callout ok">
+      <div class="ctitle">Expected result</div>
+      <p>
+        The learner appears immediately in Enrollments, Students, and your Grades class
+        list. No refresh or sign-out is needed.
+      </p>
+    </div>
+
+    <div class="callout danger">
+      <div class="ctitle">Records are unique</div>
+      <p>
+        The system rejects a duplicate LRN, and rejects a second enrolment of the same
+        learner in the same school year. If a learner transferred or was enrolled in error,
+        edit or delete the existing enrolment instead of creating a new one.
+      </p>
+    </div>
+
+    <h3>Correcting an enrolment</h3>
+    <p>
+      On the Enrollments page, your own advisees have <strong>Edit</strong> and
+      <strong>Delete</strong> buttons. Edit corrects the learner details, grade level, or
+      section. Delete removes the enrolment together with the learner record — it is
+      permanent, so verify the row before confirming.
+    </p>
+
+    <h2>6.3 Recording grades</h2>
+    <p><span class="tag teacher">TEACHER</span></p>
+
+    <h3>Finding a learner</h3>
+    <ol class="steps">
+      <li>Open <strong>Grades</strong>. <strong>My Classes</strong> lists your advisory class and each subject-section you teach.</li>
+      <li>Select a class to expand its roster.</li>
+      <li>Select the learner. The grade panel opens on the right.</li>
+    </ol>
+
+    <h3>Encoding a new grade</h3>
+    <ol class="steps">
+      <li>Select <strong>Add Grade</strong>.</li>
+      <li>If you are in an advisory class, choose the <strong>Subject</strong>. If the class is a subject load, the subject is fixed.</li>
+      <li>Type the quarterly ratings in <strong>Q1</strong> to <strong>Q4</strong>. Enter whole numbers from 60 to 100; leave a quarter blank if it is not yet available.</li>
+      <li>Select <strong>Save</strong>.</li>
+    </ol>
+
+    <p>
+      When all four quarters are present, the system computes the final rating as their
+      average and sets the remarks automatically. Until then, the final column shows a dash.
+    </p>
+
+    <h3>Editing or deleting a grade</h3>
+    <p>
+      Select the pencil icon on the grade row, change the quarter values, then select the
+      check icon to save. The cross icon cancels the edit. To remove a grade entirely, use
+      the delete icon on the row and confirm.
+    </p>
+
+    <div class="callout">
+      <div class="ctitle">You can only change your own subjects</div>
+      <p>
+        If you teach Mathematics to a section, you cannot see or edit its English grades —
+        those belong to the subject teacher or the adviser. If a subject is missing from
+        the Add Grade list, ask the School Head to check your Teaching Load.
+      </p>
+    </div>
+
+    <h2>6.4 Advisory class and subject loads in the class list</h2>
+    <p>
+      The class list labels each entry. <strong>Advisory</strong> is your own class, where
+      every subject is open to you. A subject name, such as <strong>Mathematics</strong>,
+      is a section you teach for that subject only.
+    </p>
+    <table class="tight">
+      <thead><tr><th style="width:34%">Class entry</th><th>What you can do</th></tr></thead>
+      <tbody>
+        <tr><td>Advisory — Grade 1, Dolphin</td><td>Edit advisee records, enrolment, and grades for all subjects.</td></tr>
+        <tr><td>Mathematics — Grade 5, Sampaguita</td><td>Encode Mathematics grades only; learner records are read-only.</td></tr>
+      </tbody>
+    </table>
+
+    <h2>6.5 Generating DepEd forms</h2>
+    <p>
+      Open <strong>DepEd Forms</strong>, choose SF1, SF9, or SF10, make the required
+      selection, then select <strong>Generate PDF</strong>. For SF9 and SF10 the learner
+      dropdown lists the learners you are allowed to see. See section 5.8 for the form
+      reference.
+    </p>
+
+    <h2>6.6 Your students page</h2>
+    <p>
+      <strong>Students</strong> is a read-only view of your advisees with search. To
+      change any detail, including address or guardian contact, use
+      <strong>Enrollments</strong> → <strong>Edit</strong> on the learner's row. Learners
+      from other classes will not appear here.
+    </p>
+  </section>
+
+  <!-- ============ 7 ============ -->
+  <section>
+    <h1><span class="num">Chapter 7</span>Rules Reference</h1>
+
+    <p class="lead">
+      These are the rules the system applies automatically. Knowing them prevents most
+      support questions.
+    </p>
+
+    <h2>7.1 Grade rules</h2>
+    <table>
+      <thead><tr><th style="width:32%">Rule</th><th>Behaviour</th></tr></thead>
+      <tbody>
+        <tr><td>Quarterly rating range</td><td>Whole numbers from <strong>60 to 100</strong>. Values outside this range, or with decimals, are rejected.</td></tr>
+        <tr><td>Final rating</td><td>Average of Q1, Q2, Q3, and Q4, computed automatically once all four are present.</td></tr>
+        <tr><td>Passing mark</td><td><strong>75 or above</strong> — remarks show <strong>PASSED</strong>. Below 75 shows <strong>FAILED</strong>.</td></tr>
+        <tr><td>Partial entries</td><td>Allowed. Quarters can be saved one at a time; the final rating stays blank until the fourth quarter is entered.</td></tr>
+        <tr><td>One grade per subject</td><td>A learner cannot have two grade records for the same subject. Edit the existing record instead.</td></tr>
+      </tbody>
+    </table>
+
+    <div class="callout">
+      <div class="ctitle">Worked example</div>
+      <p>
+        Q1 85, Q2 88, Q3 90, Q4 92 → final rating <strong>88.75</strong>, remarks
+        <strong>PASSED</strong>. Q1 70, Q2 72, Q3 74, Q4 76 → final <strong>73</strong>,
+        remarks <strong>FAILED</strong>.
+      </p>
+    </div>
+
+    <h2>7.2 Enrolment rules</h2>
+    <table>
+      <thead><tr><th style="width:32%">Rule</th><th>Behaviour</th></tr></thead>
+      <tbody>
+        <tr><td>Grade level</td><td>A teacher may only enrol into their own assigned grade level.</td></tr>
+        <tr><td>Unique LRN</td><td>An LRN can exist only once in the learner registry.</td></tr>
+        <tr><td>One enrolment per year</td><td>The same learner cannot be enrolled twice in the same school year.</td></tr>
+        <tr><td>Adviser link</td><td>The teacher who creates the enrolment becomes the adviser of that learner.</td></tr>
+        <tr><td>Immediate visibility</td><td>New learners appear at once in Enrollments, Students, and the teacher's Grades class list.</td></tr>
+      </tbody>
+    </table>
+
+    <h2>7.3 Access scoping</h2>
+    <table>
+      <thead><tr><th style="width:32%">Screen</th><th>Teacher sees</th></tr></thead>
+      <tbody>
+        <tr><td>Students</td><td>Own advisees only.</td></tr>
+        <tr><td>Enrollments</td><td>Own advisees only.</td></tr>
+        <tr><td>Grades</td><td>Own advisees, plus the subject-section pairs assigned in Teaching Load.</td></tr>
+        <tr><td>Dashboard</td><td>Counts for the advisory class only.</td></tr>
+      </tbody>
+    </table>
+
+    <h2>7.4 School year behaviour</h2>
+    <p>
+      The system works within one active school year at a time, currently
+      <strong>2026–2027</strong>. The enrolment form records the active year, and grade
+      records belong to the learner's enrolment for that year. For a new school year, the
+      active year must be updated by the system administrator before enrolment begins.
+    </p>
+
+    <div class="callout warn">
+      <div class="ctitle">Before a new school year</div>
+      <p>
+        Ask the system administrator to set the new active school year and verify the
+        enrolment form shows it. Enrolments created under the wrong year will need to be
+        corrected individually.
+      </p>
+    </div>
+
+    <h2>7.5 Data rules at a glance</h2>
+    <div class="cards">
+      <div class="card">
+        <div class="k">Uniqueness</div>
+        <p class="t">LRN</p>
+        <p>One learner record per LRN across the whole school.</p>
+      </div>
+      <div class="card">
+        <div class="k">Uniqueness</div>
+        <p class="t">Teaching load</p>
+        <p>The same teacher, subject, section, and year cannot be assigned twice.</p>
+      </div>
+      <div class="card">
+        <div class="k">Uniqueness</div>
+        <p class="t">Subject grade</p>
+        <p>One grade record per learner per subject.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 8 ============ -->
+  <section>
+    <h1><span class="num">Chapter 8</span>Deployment and IT Operations</h1>
+
+    <p class="lead">
+      This chapter is for the person who maintains the system at school. It describes the
+      on-premise setup, the backup routine, and how to apply updates.
+    </p>
+
+    <h2>8.1 Deployment model</h2>
+    <p>
+      SIMS is hosted on one Windows computer at school — the “server PC”. That PC serves
+      the web interface and the API, and holds the database file. Staff devices reach it
+      through the school network; no internet connection is required and no data is sent
+      outside the school.
+    </p>
+
+    <table class="tight">
+      <thead><tr><th style="width:26%">Requirement</th><th>Recommended</th></tr></thead>
+      <tbody>
+        <tr><td>Server PC</td><td>Windows 10 or 11, 4 GB RAM or more, 10 GB free disk, wired network preferred.</td></tr>
+        <tr><td>Power</td><td>UPS strongly recommended; enable BIOS “restore on AC power loss”.</td></tr>
+        <tr><td>Network</td><td>Fixed LAN address via DHCP reservation, for example 192.168.1.50.</td></tr>
+        <tr><td>Port</td><td>One TCP port for the web app, for example 5000, allowed on the Private firewall profile only.</td></tr>
+        <tr><td>Startup</td><td>Run at system startup through Task Scheduler, with restart on failure.</td></tr>
+      </tbody>
+    </table>
+
+    <h2>8.2 First-time setup outline</h2>
+    <ol class="steps">
+      <li>Prepare the server PC: fixed address, no sleep or hibernation, power settings set to stay on.</li>
+      <li>Publish the application to a fixed folder on the server, for example <code>C:\VAES-SIMS\app</code>.</li>
+      <li>Place the database in a separate data folder, for example <code>C:\VAES-SIMS\data\sims.db</code>, and configure the application to use that absolute path.</li>
+      <li>Set a unique application signing key for the installation; never keep the sample value.</li>
+      <li>Create a firewall rule allowing the web port on the private network only.</li>
+      <li>Register the application to start automatically at boot and survive a crash.</li>
+      <li>From a teacher device, open the server address in a browser and complete one full test: log in, enrol a test learner, encode a grade, generate a form.</li>
+      <li>Remove the test learner and the sample accounts before real data entry begins.</li>
+    </ol>
+
+    <h2>8.3 Daily operation</h2>
+    <ul>
+      <li>Leave the server PC powered on during school hours; it may be shut down after the last user logs out.</li>
+      <li>Staff access the system through the bookmarked address; nothing needs to be installed on their devices.</li>
+      <li>If the server restarts, users simply reload the page and sign in again.</li>
+    </ul>
+
+    <h2>8.4 Backup and restore</h2>
+    <p>
+      The database is a single file. Because it is the only copy of the school's records,
+      a nightly off-machine backup is mandatory.
+    </p>
+    <table class="tight">
+      <thead><tr><th style="width:24%">Item</th><th>Standard</th></tr></thead>
+      <tbody>
+        <tr><td>Frequency</td><td>Every school day, after the last user logs out.</td></tr>
+        <tr><td>Method</td><td>Consistent online backup of the database (not a simple file copy while the system is running), written to a USB drive or a second PC on the LAN.</td></tr>
+        <tr><td>Retention</td><td>At least 30 daily copies; keep one copy per month for the school year.</td></tr>
+        <tr><td>Verification</td><td>Test a restore once before go-live and at least once per quarter.</td></tr>
+        <tr><td>Custody</td><td>Backups contain personal data; store them locked, and record who holds them.</td></tr>
+      </tbody>
+    </table>
+
+    <div class="callout danger">
+      <div class="ctitle">An untested backup is not a backup</div>
+      <p>
+        Restore a recent copy into a test folder and confirm the data opens. Do this before
+        the system holds a full year of grades, not after.
+      </p>
+    </div>
+
+    <h2>8.5 Applying updates</h2>
+    <ol class="steps">
+      <li>Back up the database first.</li>
+      <li>Publish the new build to a fresh folder.</li>
+      <li>Stop the running application, switch the startup path to the new folder, and start it.</li>
+      <li>Sign in and spot-check enrolment, grades, and one PDF.</li>
+      <li>Keep the previous build folder until the new one is confirmed working.</li>
+    </ol>
+
+    <h2>8.6 Network and access notes</h2>
+    <ul>
+      <li>The system is reachable only from the school network. There is no remote access from home.</li>
+      <li>Give teacher devices the wired network or the staff Wi-Fi; guest Wi-Fi networks that isolate clients will not reach the server.</li>
+      <li>The web address uses plain HTTP on the local network. Browsers may warn that the connection is not private; this is expected for a LAN-only address.</li>
+      <li>Installing the app as a home-screen or desktop application requires HTTPS; on plain HTTP it works as a normal website.</li>
+    </ul>
+  </section>
+
+  <!-- ============ 9 ============ -->
+  <section>
+    <h1><span class="num">Chapter 9</span>Security and Data Privacy</h1>
+
+    <p class="lead">
+      Learner records are personal data. The system applies access control and keeps data
+      inside the school, but compliance also depends on how accounts and backups are
+      handled day to day.
+    </p>
+
+    <h2>9.1 Built-in protections</h2>
+    <table class="tight">
+      <thead><tr><th style="width:34%">Control</th><th>How it works</th></tr></thead>
+      <tbody>
+        <tr><td>Authentication</td><td>Every page and every API request requires a signed-in session. Sessions expire after 8 hours.</td></tr>
+        <tr><td>Role-based access</td><td>The server re-checks permission on each request, so hidden buttons cannot be bypassed by editing the address.</td></tr>
+        <tr><td>Data scoping</td><td>Teachers are limited to their advisees and their assigned subject-sections.</td></tr>
+        <tr><td>Separation of duties</td><td>The School Head cannot log in as a teacher or alter grades; teachers cannot change teaching loads.</td></tr>
+        <tr><td>Password ownership</td><td>Only the account owner can change a password after the initial issue.</td></tr>
+        <tr><td>Access withdrawal</td><td>Deleting a teacher record deletes the linked login in the same action.</td></tr>
+        <tr><td>Activity log</td><td>Student, enrolment, and grade changes are recorded with the actor, action, and time.</td></tr>
+        <tr><td>Local storage</td><td>Data never leaves the school server; there is no cloud copy.</td></tr>
+      </tbody>
+    </table>
+
+    <h2>9.2 Account hygiene</h2>
+    <ul>
+      <li>One account per person. Never share a login, even between teachers who job-share.</li>
+      <li>Change the initial password on first sign-in; use at least 8 characters with a mix of letters and numbers.</li>
+      <li>Disable access the same day a teacher leaves or transfers: delete the teacher record, which also removes the login.</li>
+      <li>The School Head's account is the highest privilege in the system — protect it and change its default password immediately.</li>
+    </ul>
+
+    <h2>9.3 Data Privacy Act (RA 10173) considerations</h2>
+    <p>
+      Schools processing learner information are personal information controllers. The
+      on-premise design supports the following obligations:
+    </p>
+    <table class="tight">
+      <thead><tr><th style="width:30%">Principle</th><th>How SIMS supports it</th></tr></thead>
+      <tbody>
+        <tr><td>Purpose limitation</td><td>Only enrolment, learner identity, guardian contact, and grades are collected — the data needed for school records.</td></tr>
+        <tr><td>Access control</td><td>Role-based permissions and advisory scoping limit each user to the learners they work with.</td></tr>
+        <tr><td>Accountability</td><td>The activity log records who made each student, enrolment, and grade change.</td></tr>
+        <tr><td>Storage limitation</td><td>Data stays on school equipment under school custody.</td></tr>
+        <tr><td>Security</td><td>Server kept in a controlled area; backups encrypted or physically secured; no public exposure.</td></tr>
+      </tbody>
+    </table>
+
+    <div class="callout">
+      <div class="ctitle">Operational practices that remain the school's responsibility</div>
+      <p>
+        A written privacy notice for parents, a retention and disposal schedule, a breach
+        response procedure, and designating a data protection officer are school-level
+        obligations. The system provides the controls; the school must document their use.
+      </p>
+    </div>
+
+    <h2>9.4 Known security limitations</h2>
+    <ul>
+      <li>Passwords are stored as unsalted hashes. This is acceptable for a closed school LAN in the pilot phase, but should be upgraded before wider deployment or internet exposure.</li>
+      <li>There is no administrator password reset screen; recovery is done by the system administrator on the server.</li>
+      <li>The activity log keeps recent entries for monitoring and is not a tamper-proof audit ledger.</li>
+      <li>Plain HTTP on the LAN means traffic is not encrypted between devices and the server.</li>
+      <li>There is no automatic account lockout after repeated failed logins.</li>
+    </ul>
+  </section>
+
+  <!-- ============ 10 ============ -->
+  <section class="faq">
+    <h1><span class="num">Chapter 10</span>Troubleshooting and FAQ</h1>
+
+    <p class="lead">
+      Most issues fall into a few patterns. Work through the relevant table before
+      contacting support.
+    </p>
+
+    <h2>10.1 Common problems</h2>
+    <table>
+      <thead><tr><th style="width:30%">Symptom</th><th style="width:34%">Likely cause</th><th>What to do</th></tr></thead>
+      <tbody>
+        <tr>
+          <td>The page will not load at all</td>
+          <td>Server PC off, wrong address, or not on the school network</td>
+          <td>Check that the server PC is on and connected; confirm the address with your IT coordinator; reconnect to the school network.</td>
+        </tr>
+        <tr>
+          <td>“Invalid credentials”</td>
+          <td>Username typo or the password has been changed</td>
+          <td>Re-type carefully, check capitalisation, and ask the SIMS administrator for a reset if needed.</td>
+        </tr>
+        <tr>
+          <td>Signed out unexpectedly</td>
+          <td>The 8-hour session expired or the server restarted</td>
+          <td>Sign in again. Unsaved form entries will be lost.</td>
+        </tr>
+        <tr>
+          <td>No students appear for a teacher</td>
+          <td>The teacher has no advisory class yet</td>
+          <td>The teacher must enrol their learners. Advisory is established by enrolment, not by the teacher record.</td>
+        </tr>
+        <tr>
+          <td>“Add Grade” is missing a subject</td>
+          <td>No matching teaching load, or the subject is not offered for that grade</td>
+          <td>Ask the School Head to check Teaching Load for that exact subject, section, and school year.</td>
+        </tr>
+        <tr>
+          <td>A grade is refused</td>
+          <td>Value below 60, above 100, or not a whole number</td>
+          <td>Enter a whole number from 60 to 100.</td>
+        </tr>
+        <tr>
+          <td>Final rating shows “—”</td>
+          <td>Not all four quarters are entered</td>
+          <td>Complete Q1 to Q4; the final rating appears automatically.</td>
+        </tr>
+        <tr>
+          <td>“You can only enroll students in Grade X”</td>
+          <td>The selected grade level differs from the teacher's assigned grade level</td>
+          <td>Use the teacher's assigned grade level, or ask the School Head to correct the teacher record.</td>
+        </tr>
+        <tr>
+          <td>“LRN already exists”</td>
+          <td>The learner is already registered</td>
+          <td>Search Students for the LRN and edit the existing record instead of creating a duplicate.</td>
+        </tr>
+        <tr>
+          <td>“Student already enrolled for this school year”</td>
+          <td>A second enrolment was attempted</td>
+          <td>Edit the existing enrolment on the Enrollments page.</td>
+        </tr>
+        <tr>
+          <td>PDF generation fails or downloads an empty file</td>
+          <td>Missing data, or a font problem on the server</td>
+          <td>Confirm the learner is enrolled and grades exist. If it persists, report it to the IT coordinator with the form type and learner.</td>
+        </tr>
+        <tr>
+          <td>Browser warns “Not secure”</td>
+          <td>The site uses plain HTTP on the school LAN</td>
+          <td>Expected for an internal address. Do not enter SIMS credentials on any other site.</td>
+        </tr>
+        <tr>
+          <td>“Install app” is not offered</td>
+          <td>PWA installation requires HTTPS</td>
+          <td>Use the site in the browser and bookmark it instead.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>10.2 Frequently asked questions</h2>
+
+    <h3>Can the School Head see or reset a teacher's password?</h3>
+    <p>
+      No. The School Head issues the initial password; after the teacher changes it, only
+      the teacher knows it. If it is forgotten, the system administrator resets it on the
+      server and hands over a new initial password.
+    </p>
+
+    <h3>Can the School Head enter grades for a teacher who is absent?</h3>
+    <p>
+      No. Grade entry is restricted to the teacher who owns the class. The School Head can
+      review grades but must ask the teacher — or the system administrator for an
+      exceptional correction.
+    </p>
+
+    <h3>Why does a teacher see only a few students?</h3>
+    <p>
+      Teachers see their advisory class only. If a teacher should have more learners,
+      check that those learners are enrolled under that teacher and that the section
+      spelling matches the teaching load.
+    </p>
+
+    <h3>What happens when a learner transfers out?</h3>
+    <p>
+      The adviser deletes the enrolment, which also removes the learner record. If the
+      learner may return, confirm the school's records retention policy first.
+    </p>
+
+    <h3>Can several teachers use the system at the same time?</h3>
+    <p>
+      Yes. The database handles the normal load of a school's staff. Users may occasionally
+      wait a fraction of a second while another user's save completes.
+    </p>
+
+    <h3>Does the system work if the internet is down?</h3>
+    <p>
+      Yes, provided the server PC and the school's local network are running. Internet is
+      not used for day-to-day operation.
+    </p>
+
+    <h3>How often should we back up?</h3>
+    <p>
+      Every school day, to a device that is not the server PC. Test a restore quarterly.
+    </p>
+
+    <h3>Where can teachers work from?</h3>
+    <p>
+      Anywhere inside the school network. There is no access from home.
+    </p>
+  </section>
+
+  <!-- ============ 11 ============ -->
+  <section>
+    <h1><span class="num">Chapter 11</span>Known Limitations and Roadmap</h1>
+
+    <p class="lead">
+      The system is ready for daily school operations. The following items are known and
+      deliberately out of scope for version 1.0.
+    </p>
+
+    <h2>11.1 Current limitations</h2>
+    <table>
+      <thead><tr><th style="width:34%">Area</th><th>Limitation and workaround</th></tr></thead>
+      <tbody>
+        <tr><td>School year rollover</td><td>The active school year must be changed by the system administrator; there is no in-app year management screen.</td></tr>
+        <tr><td>Section naming</td><td>Sections are free text. Typos break teaching-load matching, so follow the suggested section list.</td></tr>
+        <tr><td>Password recovery</td><td>No self-service or School Head reset; recovery is done on the server by IT.</td></tr>
+        <tr><td>Password storage</td><td>Unsalted hashes; upgrade recommended before external exposure.</td></tr>
+        <tr><td>PWA installation</td><td>Requires HTTPS; on the LAN the system runs as a normal website.</td></tr>
+        <tr><td>Audit log depth</td><td>The dashboard shows the most recent ten activities; there is no exportable audit report.</td></tr>
+        <tr><td>Remote access</td><td>Not available by design; the system is LAN-only.</td></tr>
+        <tr><td>Multiple schools</td><td>One school per installation.</td></tr>
+        <tr><td>Bulk data</td><td>No CSV or Excel import/export; records are entered through the screens.</td></tr>
+      </tbody>
+    </table>
+
+    <h2>11.2 Not included in version 1.0</h2>
+    <ul>
+      <li>Attendance tracking and daily logs.</li>
+      <li>Parent or learner portal access.</li>
+      <li>Class schedules and lesson plans.</li>
+      <li>Learning materials, document uploads, and learner photos.</li>
+      <li>Analytics dashboards and comparative reports.</li>
+      <li>SMS or e-mail notifications.</li>
+      <li>Weighted or DepEd-specific grading formulas beyond the quarterly average.</li>
+    </ul>
+
+    <h2>11.3 Recommended next steps</h2>
+    <ol class="steps">
+      <li>Run a full school-year pilot with real enrolment, grades, and forms.</li>
+      <li>Upgrade password storage and add an administrator password reset before wider use.</li>
+      <li>Add an exportable audit and grade summary for School Head reporting.</li>
+      <li>Add school-year management so rollover does not need technical support.</li>
+      <li>Evaluate an internal HTTPS certificate if app-style installation becomes a requirement.</li>
+    </ol>
+  </section>
+
+  <!-- ============ Appendix A ============ -->
+  <section>
+    <h1><span class="num">Appendix A</span>Quick Reference Card</h1>
+
+    <h2>A.1 School Head — daily and periodic tasks</h2>
+    <table class="tight">
+      <thead><tr><th style="width:26%">When</th><th>Task</th></tr></thead>
+      <tbody>
+        <tr><td>Start of year</td><td>Add teachers → create logins → hand over initial passwords → assign teaching loads.</td></tr>
+        <tr><td>During enrolment</td><td>Monitor the dashboard totals and Recent Activity; verify sections on Enrollments.</td></tr>
+        <tr><td>Each quarter</td><td>Review grades by grade level; confirm teachers have completed Q1–Q4.</td></tr>
+        <tr><td>Report card period</td><td>Generate SF9 per learner and SF1 for the register; archive the PDFs.</td></tr>
+        <tr><td>Staff changes</td><td>Delete the departing teacher (removes the login) and reassign their load.</td></tr>
+        <tr><td>Daily</td><td>Confirm the backup ran; keep the USB copy in a secured place.</td></tr>
+      </tbody>
+    </table>
+
+    <h2>A.2 Teacher — start of year</h2>
+    <ol class="steps">
+      <li>Sign in and change the initial password.</li>
+      <li>Open Enrollments and enrol each learner in your advisory class.</li>
+      <li>Verify the learners appear in Students and in your Grades class list.</li>
+      <li>Check My Classes — you should see your advisory class and any subject loads.</li>
+    </ol>
+
+    <h2>A.3 Teacher — each quarter</h2>
+    <ol class="steps">
+      <li>Open Grades and select the class.</li>
+      <li>Select a learner, choose Add Grade (or edit the existing row).</li>
+      <li>Enter whole numbers 60–100 for the quarter.</li>
+      <li>Confirm the final rating and remarks once all four quarters are complete.</li>
+      <li>Generate SF9 when the School Head requests report cards.</li>
+    </ol>
+
+    <h2>A.4 Keyboard and UI tips</h2>
+    <ul>
+      <li>Use the search box on every list page instead of scrolling long tables.</li>
+      <li>Tables scroll sideways on small screens; scroll the table, not the page, to reach the Actions column.</li>
+      <li>Hover over relative times in Recent Activity to see the exact timestamp.</li>
+      <li>Always log out on shared computers.</li>
+    </ul>
+  </section>
+
+  <!-- ============ Appendix B ============ -->
+  <section>
+    <h1><span class="num">Appendix B</span>Glossary</h1>
+
+    <dl class="defs">
+      <div><dt>Advisory class</dt><dd>The group of learners a teacher enrolled and is responsible for. Grants full grade access to those learners.</dd></div>
+      <div><dt>Final rating</dt><dd>The average of the four quarterly ratings, computed automatically once all four are present.</dd></div>
+      <div><dt>LRN</dt><dd>Learner Reference Number — the unique identifier issued to each learner.</dd></div>
+      <div><dt>PASSED / FAILED</dt><dd>Remarks derived from the final rating: 75 or above is PASSED.</dd></div>
+      <div><dt>Q1–Q4</dt><dd>First to fourth quarter ratings, whole numbers from 60 to 100.</dd></div>
+      <div><dt>School Head</dt><dd>The administrator role. Manages teachers, loads, and monitoring; read-only on learner data and grades.</dd></div>
+      <div><dt>School year</dt><dd>The academic year the records belong to, for example 2026–2027.</dd></div>
+      <div><dt>Section</dt><dd>The class group within a grade level, for example “Dolphin”. Compared as exact text across modules.</dd></div>
+      <div><dt>SF1</dt><dd>School Register — the master list of enrolled learners.</dd></div>
+      <div><dt>SF9</dt><dd>Learner's Progress Report Card, formerly Form 138.</dd></div>
+      <div><dt>SF10</dt><dd>Learner's Permanent Academic Record, formerly Form 137.</dd></div>
+      <div><dt>Teaching load</dt><dd>The subject-and-section pairs assigned to a teacher. Determines which grades the teacher may encode.</dd></div>
+      <div><dt>Teacher</dt><dd>Faculty role. Enrols advisees and encodes grades for advisees and assigned subject-sections.</dd></div>
+    </dl>
+  </section>
+
+  <!-- ============ Appendix C ============ -->
+  <section>
+    <h1><span class="num">Appendix C</span>First-Run Checklist</h1>
+
+    <p class="lead">
+      Complete these items before teachers begin entering real data. Each item should be
+      ticked off and dated by the School Head or IT coordinator.
+    </p>
+
+    <table>
+      <thead><tr><th style="width:6%">#</th><th>Item</th><th style="width:16%">Done</th></tr></thead>
+      <tbody>
+        <tr><td>1</td><td>Server PC placed in a secured area, connected by wired LAN, with a fixed address.</td><td>☐</td></tr>
+        <tr><td>2</td><td>Power settings: no sleep, BIOS restore-on-power-loss enabled, UPS connected if available.</td><td>☐</td></tr>
+        <tr><td>3</td><td>Application starts automatically at boot and restarts after a crash.</td><td>☐</td></tr>
+        <tr><td>4</td><td>Firewall allows the web port on the private network only.</td><td>☐</td></tr>
+        <tr><td>5</td><td>A unique application signing key is set for this installation.</td><td>☐</td></tr>
+        <tr><td>6</td><td>Default and demo accounts removed; the School Head password changed.</td><td>☐</td></tr>
+        <tr><td>7</td><td>Test learners and test grades removed from the live database.</td><td>☐</td></tr>
+        <tr><td>8</td><td>Real teacher records created and one login issued per teacher.</td><td>☐</td></tr>
+        <tr><td>9</td><td>Teaching loads assigned for the current school year, with section names matching enrolments.</td><td>☐</td></tr>
+        <tr><td>10</td><td>Nightly backup scheduled to a USB drive or second PC; first backup verified.</td><td>☐</td></tr>
+        <tr><td>11</td><td>Restore test completed successfully into a separate folder.</td><td>☐</td></tr>
+        <tr><td>12</td><td>End-to-end test on a teacher device: sign in, enrol a test learner, encode a grade, generate SF9, then remove the test data.</td><td>☐</td></tr>
+        <tr><td>13</td><td>Staff briefing conducted: signing in, changing password, enrolling, encoding grades, logging out.</td><td>☐</td></tr>
+        <tr><td>14</td><td>Support contacts recorded and posted in the faculty room.</td><td>☐</td></tr>
+      </tbody>
+    </table>
+
+    <div class="callout ok">
+      <div class="ctitle">Sign-off</div>
+      <p>
+        School Head: __________________________ &nbsp; Date: ______________<br>
+        IT Coordinator: ________________________ &nbsp; Date: ______________
+      </p>
+      <p class="small muted" style="margin-top:3mm; margin-bottom:0;">
+        Villa Antonio Elementary School · SIMS User Manual v1.0 · October 2026 · Internal use only
+      </p>
+    </div>
+  </section>
+
+</div>
+</body>
+</html>

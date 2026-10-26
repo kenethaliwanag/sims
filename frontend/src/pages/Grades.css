@@ -1,0 +1,257 @@
+/* Students, Teachers, Enrollments share similar styles */
+.grades-layout {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 20px;
+  height: calc(100vh - 200px);
+}
+
+.enrollments-panel {
+  background: white;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  overflow-y: auto;
+}
+
+.enrollments-panel h3 {
+  font-size: 16px;
+  margin-bottom: 16px;
+  color: #1f2937;
+}
+
+.enrollments-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.class-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.class-block {
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.class-block.active {
+  border-color: #3b82f6;
+}
+
+.class-header {
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: none;
+  padding: 10px 12px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  font: inherit;
+}
+
+.class-header:hover {
+  background-color: #f9fafb;
+}
+
+.class-block.active .class-header {
+  background-color: #eff6ff;
+}
+
+.class-title {
+  font-weight: 600;
+  font-size: 14px;
+  color: #1f2937;
+}
+
+.class-sub {
+  font-size: 12px;
+  color: #6b7280;
+}
+
+.class-count {
+  font-size: 11px;
+  color: #9ca3af;
+}
+
+.class-roster {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 8px;
+  border-top: 1px solid #e5e7eb;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.class-roster .enrollment-item {
+  padding: 8px 10px;
+}
+
+.enrollment-item {
+  padding: 12px;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.enrollment-item:hover {
+  background-color: #f9fafb;
+  border-color: #3b82f6;
+}
+
+.enrollment-item.active {
+  background-color: #eff6ff;
+  border-color: #3b82f6;
+}
+
+.student-name {
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 4px;
+}
+
+.student-details {
+  font-size: 12px;
+  color: #6b7280;
+}
+
+.grades-panel {
+  background: white;
+  border-radius: 8px;
+  padding: 24px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  overflow-y: auto;
+}
+
+.student-header {
+  margin-bottom: 20px;
+  padding-bottom: 16px;
+  border-bottom: 2px solid #e5e7eb;
+}
+
+.student-header h3 {
+  font-size: 20px;
+  color: #1f2937;
+  margin-bottom: 4px;
+}
+
+.student-header p {
+  font-size: 14px;
+  color: #6b7280;
+}
+
+.add-grade-bar {
+  margin-bottom: 14px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: flex-start;
+}
+
+.grade-form {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 10px;
+  padding: 12px;
+  background-color: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+}
+
+.quarter-fields {
+  display: flex;
+  gap: 8px;
+}
+
+.quarter-field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.quarter-field label {
+  font-size: 11px;
+  font-weight: 600;
+  color: #6b7280;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.quarter-field select {
+  min-width: 170px;
+}
+
+.grade-input {
+  width: 78px;
+  padding: 9px 10px;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  background-color: #fff;
+  font: inherit;
+  font-size: 14px;
+  text-align: center;
+  color: #1f2937;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.grade-input::placeholder {
+  color: #cbd5e1;
+  font-size: 12px;
+}
+
+.grade-input:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+}
+
+.final-grade {
+  font-weight: 700;
+  color: #1f2937;
+}
+
+.remarks {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.remarks.passed {
+  background-color: #dcfce7;
+  color: #166534;
+}
+
+.remarks.failed {
+  background-color: #fecaca;
+  color: #991b1b;
+}
+
+.no-selection {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  color: #9ca3af;
+  font-size: 16px;
+}
+
+@media (max-width: 768px) {
+  .grades-layout {
+    grid-template-columns: 1fr;
+    height: auto;
+  }
+
+  .enrollments-panel {
+    max-height: 300px;
+  }
+}

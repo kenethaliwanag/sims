@@ -1,0 +1,123 @@
+.login-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.login-box {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+  padding: 40px;
+  width: 100%;
+  max-width: 400px;
+}
+
+.login-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.login-logo {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+  margin-bottom: 8px;
+}
+
+.login-header h1 {
+  font-size: 32px;
+  color: #667eea;
+  margin-bottom: 5px;
+}
+
+.login-header p {
+  color: #666;
+  font-size: 14px;
+  margin: 2px 0;
+}
+
+.deped-text {
+  color: #999;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.login-box form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-group label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #333;
+}
+
+.form-group input {
+  padding: 10px 12px;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.error {
+  color: #ef4444;
+  font-size: 13px;
+  padding: 10px;
+  background-color: #fecaca;
+  border-radius: 4px;
+}
+
+/* Login action: centered, deliberately narrower than the fields above it. */
+.login-box form .btn-primary {
+  align-self: center;
+  min-width: 160px;
+  padding: 11px 32px;
+}
+
+.demo-logins {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid #e5e7eb;
+  text-align: center;
+}
+
+.demo-logins p {
+  font-size: 13px;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.demo-btn {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 6px;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  background-color: white;
+  cursor: pointer;
+  font-size: 13px;
+  transition: all 0.2s;
+}
+
+.demo-btn:hover {
+  background-color: #f3f4f6;
+  border-color: #667eea;
+}
