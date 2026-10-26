@@ -1,0 +1,359 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f5f7fa;
+  color: #333;
+}
+
+.app-container {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  min-width: 0;
+}
+
+.content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 24px;
+  min-width: 0;
+}
+
+.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  font-size: 18px;
+  color: #666;
+}
+
+/* Buttons */
+.btn-primary {
+  background-color: #3b82f6;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: background-color 0.2s;
+}
+
+.btn-primary:hover:not(:disabled) {
+  background-color: #2563eb;
+}
+
+.btn-primary:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.btn-secondary {
+  background-color: #e5e7eb;
+  color: #333;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.btn-secondary:hover {
+  background-color: #d1d5db;
+}
+
+.muted {
+  color: #9ca3af;
+  font-size: 13px;
+}
+
+/* Icon buttons */
+.icon-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+}
+
+.icon-btn:hover {
+  background-color: #e5e7eb;
+}
+
+.icon-btn.edit {
+  color: #f59e0b;
+}
+
+.icon-btn.delete, .icon-btn.cancel {
+  color: #ef4444;
+}
+
+.icon-btn.save {
+  color: #10b981;
+}
+
+/* Page layout */
+.page-container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.page-header h2 {
+  font-size: 24px;
+  color: #1f2937;
+}
+
+/* Search bar */
+.search-bar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: white;
+  padding: 12px 16px;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+  margin-bottom: 20px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.search-bar input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 14px;
+}
+
+.search-bar select {
+  min-width: 180px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  flex-shrink: 0;
+}
+
+.search-bar svg {
+  color: #9ca3af;
+}
+
+/* Dropdowns: native <select> kept for keyboard/mobile support, restyled to match the cards. */
+select {
+  appearance: none;
+  -webkit-appearance: none;
+  padding: 10px 38px 10px 12px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  background-color: #fff;
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%236b7280' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 14px;
+  font-family: inherit;
+  font-size: 14px;
+  color: #1f2937;
+  cursor: pointer;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+select:hover:not(:disabled) {
+  border-color: #cbd5e1;
+}
+
+select:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+}
+
+select:disabled {
+  background-color: #f9fafb;
+  color: #9ca3af;
+  cursor: not-allowed;
+}
+
+/* Grades are typed numbers only: no spinner toggles. */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+/* Table */
+.table-container {
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+thead {
+  background-color: #f3f4f6;
+  border-bottom: 2px solid #e5e7eb;
+}
+
+th {
+  padding: 16px;
+  text-align: left;
+  font-weight: 600;
+  color: #374151;
+  font-size: 13px;
+  text-transform: uppercase;
+}
+
+td {
+  padding: 16px;
+  border-bottom: 1px solid #e5e7eb;
+  color: #374151;
+  font-size: 14px;
+}
+
+tbody tr:hover {
+  background-color: #f9fafb;
+}
+
+td.actions {
+  white-space: nowrap;
+}
+
+td.actions > * + * {
+  margin-left: 8px;
+}
+
+/* Modal */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal {
+  background: white;
+  border-radius: 8px;
+  padding: 24px;
+  width: 90%;
+  max-width: 500px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 20px 25px rgba(0, 0, 0, 0.15);
+}
+
+.modal h3 {
+  font-size: 20px;
+  margin-bottom: 20px;
+  color: #1f2937;
+}
+
+.modal form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.modal input,
+.modal textarea {
+  padding: 10px 12px;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  font-size: 14px;
+  font-family: inherit;
+}
+
+.modal input:focus,
+.modal textarea:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.modal textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.modal-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.modal-actions button {
+  flex: 1;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-group label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #374151;
+}
+
+/* Responsive */
+@media (max-width: 767px) {
+  .app-container {
+    overflow-x: hidden;
+  }
+
+  .content {
+    padding: 16px;
+  }
+
+  .page-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  table {
+    font-size: 12px;
+  }
+
+  th, td {
+    padding: 12px 8px;
+  }
+}
